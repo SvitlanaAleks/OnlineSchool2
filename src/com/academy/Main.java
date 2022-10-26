@@ -11,6 +11,7 @@ public class Main {
         Lectures lectures2 = new Lectures();
 
         Lectures lectures3=new Lectures();
+        Lectures lectures4=new Lectures();
 
         System.out.println(Lectures.counter);
         System.out.println(Lectures.counter);
