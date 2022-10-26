@@ -1,4 +1,4 @@
-package models;
+package com.academy.models;
 
 public class Students {
     private static long ID;

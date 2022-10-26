@@ -1,4 +1,4 @@
-package services;
+package com.academy.services;
 
 public class TeacherService {
 }
