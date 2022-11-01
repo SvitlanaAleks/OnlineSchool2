@@ -13,6 +13,7 @@ public class Main {
         Lectures lectures3 = new Lectures();
         Lectures lectures4 = new Lectures();
 
+        Lectures lectures5=new Lectures();
 
         System.out.println(Lectures.counter);
         System.out.println(Lectures.counter);
