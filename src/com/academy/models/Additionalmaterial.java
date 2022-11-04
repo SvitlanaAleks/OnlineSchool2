@@ -1,10 +1,10 @@
 package com.academy.models;
 
-public class Additionalmaterials {
+public class Additionalmaterial {
     private static long ID;
     public static long counter;
 
-    public Additionalmaterials() {
+    public Additionalmaterial() {
         ID = counter++;
     }
 

@@ -1,28 +1,47 @@
 package com.academy;
 
 
-import com.academy.models.Courses;
-import com.academy.models.Lectures;
+import com.academy.models.Course;
+import com.academy.models.Lecture;
 
 public class Main {
 
     public static void main(String[] args) {
-        Lectures lectures = new Lectures();
-        Lectures lectures1 = new Lectures();
-        Lectures lectures2 = new Lectures();
+        Lecture lecture1 = new Lecture();
+        Lecture lecture2 = new Lecture();
+        Lecture lecture3 = new Lecture();
 
-        Lectures lectures3 = new Lectures();
-        Lectures lectures4 = new Lectures();
+        Lecture lecture4 = new Lecture();
+        Lecture lecture5 = new Lecture();
 
-        // 6 лекція
-        Courses courses1=new Courses();
+        // 6 лекція "Методи"
+        Course course1 = new Course();
 
-        Lectures lectures5= new Lectures();
+        Lecture lecture6 = new Lecture();
+        lecture6.idCourses = "course1";
+
+        Lecture lecture7 = new Lecture();
+        lecture7.idCourses = "course2";
+
+        Lecture lecture8 = new Lecture();
+        lecture8.idCourses = "course3";
+
+        Lecture lecture9 = new Lecture();
+        lecture9.idCourses = "course4";
+
+        Lecture lecture10 = new Lecture();
+        lecture10.idCourses = "course5";
+
+        Lecture lecture11 = new Lecture();
+        lecture11.idCourses = "course6";
+
+        Lecture lecture12 = new Lecture();
+        lecture12.idCourses = "course7";
 
 
+        System.out.println(Lecture.counter);
 
-        System.out.println(Courses.counter);
-        System.out.println(Lectures.counter);
+        System.out.println(lecture8.idCourses);
 
 
     }

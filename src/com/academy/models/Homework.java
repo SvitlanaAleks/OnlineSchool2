@@ -1,11 +1,11 @@
 package com.academy.models;
 
-public class Courses {
-
+public class Homework {
     private static long ID;
     public static long counter;
 
-    public Courses() {
+    public Homework() {
         ID = counter++;
     }
 }
+

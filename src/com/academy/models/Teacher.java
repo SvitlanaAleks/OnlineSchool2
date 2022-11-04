@@ -1,11 +1,11 @@
 package com.academy.models;
 
-public class Students {
+public class Teacher {
     private static long ID;
     public static long counter;
 
-    public Students() {
+    public Teacher() {
         ID = counter++;
     }
-}
 
+}

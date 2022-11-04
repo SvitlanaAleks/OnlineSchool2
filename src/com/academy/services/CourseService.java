@@ -1,4 +1,4 @@
 package com.academy.services;
 
-public class CoursesService {
+public class CourseService {
 }
