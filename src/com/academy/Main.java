@@ -13,6 +13,7 @@ public class Main {
 
         // 6 лекція "Методи"
 
+
         Course course1 = new Course(1, "JavaDeveloper", "Anna May", "Знайомство з Java");
         Course course2 = new Course(8, "Python", "Nick Jagger", " Знайомство з Python");
 
@@ -33,11 +34,12 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Select a category:");
-        System.out.println("1. Courses");
-        System.out.println("2. Teachers");
-        System.out.println("3. Students");
-        System.out.println("4. Lectures");
+        System.out.println("Виберіть категорію:");
+        System.out.println("1. Курси");
+        System.out.println("2. Вчителі");
+        System.out.println("3. Студенти");
+        System.out.println("4. Лекції");
+
         int numberOfCategory = sc.nextInt();
 
         switch (numberOfCategory) {
@@ -47,52 +49,27 @@ public class Main {
             case 4 -> System.out.println("You selected the category: Lectures");
             default -> System.out.println("Such category does not exist!");
         }
-        if (numberOfCategory !=4){
-            System.out.println("Розділ в режимі наповлення");}
-        else {
-        Scanner sc2 = new Scanner(System.in);
+        if (numberOfCategory != 4 && numberOfCategory != 1) {
+            System.out.println("Розділ в стані наповнення");
+        } else if (numberOfCategory == 1) {
+            System.out.println("Виберіть курс" +
+                    "\n" + "1. " + course1.courseName +
+                    "\n" + "2. " + course2.courseName);
+            int numberOfCourse = sc.nextInt();
+            switch (numberOfCourse) {
+                case 1 -> System.out.println("You selected the Course: JavaDeveloper");
+                case 2 -> System.out.println("You selected the Course: Python");
+            }
+        } else if (numberOfCategory == 4) {
 
-        System.out.println("Введіть тему лекції: ");
-        String nameLecture = sc2.next();
-        System.out.println("Тема лекції: " + nameLecture);
+            Scanner sc2 = new Scanner(System.in);
 
-        System.out.println("Введіть викладача: ");
-        String teacherName = sc2.next();
-
-        System.out.println("Ім'я викладача: " + teacherName);
-
-        System.out.println("Введіть id лекції: ");
-        Lecture.ID = sc2.nextInt();
-        System.out.println("Id лекції: " + Lecture.ID);
-
-        System.out.println("Введіть id курсу: ");
-        Course.Id = sc2.nextInt();
-        System.out.println("Id курсу: " + Course.Id);
-
-        System.out.println("Id лекції: " + Course.Id);
-
-        Lecture lecture = new Lecture(Lecture.ID, nameLecture, teacherName, Course.Id);
-
-        System.out.printf("Назва лекції: " + nameLecture +
-                "\n" + " Ім'я викладача: " + teacherName +
-                "\n" + " Id лекції" + Lecture.ID +
-                "\n" + " Id курсу: " + Course.Id);
-
-        System.out.println("Lection id:" + lecture.getCourseId());
-
-
-        System.out.println("\n" + "Бажаєте створити ще одну лекцію?");
-        System.out.println("1 Так" + "\n" + "2 Ні ");
-
-        int toBeOrNotToBe = sc2.nextInt();
-
-        if (toBeOrNotToBe == 1) {
             System.out.println("Введіть тему лекції: ");
-            String nameLectureNext = sc2.next();
+            String nameLecture = sc2.next();
             System.out.println("Тема лекції: " + nameLecture);
 
             System.out.println("Введіть викладача: ");
-            String teacherNameNext = sc2.next();
+            String teacherName = sc2.next();
 
             System.out.println("Ім'я викладача: " + teacherName);
 
@@ -100,29 +77,85 @@ public class Main {
             Lecture.ID = sc2.nextInt();
             System.out.println("Id лекції: " + Lecture.ID);
 
-            System.out.println("Введіть id курсу: ");
-            Lecture.courseId = sc2.nextInt();
-            System.out.println("Id курсу: " + Lecture.courseId);
+            System.out.println("Введіть id курсу:" +
+                    "\n" + "1 " + course1.courseName +
+                    "\n" + "2 " + course2.courseName);
+            Course.Id = sc2.nextInt();
+            if (Course.Id == 1) {
+                System.out.println("Id курсу: " + Course.Id);
+            }
 
-            System.out.println("Id лекції: " + Lecture.courseId);
+            System.out.println("Id лекції: " + Course.Id);
 
-            Lecture lectureNext = new Lecture(Lecture.ID, nameLecture, teacherName, Lecture.courseId);
+
+            Lecture lecture = new Lecture(Lecture.ID, nameLecture, teacherName, Course.Id);
+
 
             System.out.printf("Назва лекції: " + nameLecture +
                     "\n" + " Ім'я викладача: " + teacherName +
-                    "\n" + " Id лекції" + Lecture.ID +
-                    "\n" + " Id курсу: " + Lecture.courseId);
+                    "\n" + " Id лекції: " + Lecture.ID +
+                    "\n" + " Id курсу: " + Course.Id);
+
+            System.out.println("\n" + "Course id:" + Course.Id);
 
 
-            System.out.println("Lection id:" + lecture.getCourseId());
-        } else if (toBeOrNotToBe == 2) {
-            System.out.println("Ще одну лекцію не буде створено!");
+            System.out.println("\n" + "Бажаєте створити ще одну лекцію?");
+            System.out.println("1 Так" + "\n" + "2 Ні ");
+            Scanner sc3 = new Scanner(System.in);
+
+            int answer = sc3.nextInt();
+
+            if (answer == 1) {
+                System.out.println("Введіть тему лекції: ");
+                String nameNewLecture = sc2.next();
+                System.out.println("Тема лекції: " + nameNewLecture);
+
+                System.out.println("Введіть викладача: ");
+                String teacherNewName = sc2.next();
+
+                System.out.println("Ім'я викладача: " + teacherNewName);
+
+                System.out.println("Введіть id лекції: ");
+                Lecture.ID = sc2.nextInt();
+                System.out.println("Id лекції: " + Lecture.ID);
+
+                System.out.println("Введіть id курсу:" +
+                        "\n" + "1 " + course1.courseName +
+                        "\n" + "2 " + course2.courseName);
+                Course.Id = sc2.nextInt();
+                if (Course.Id == 1) {
+                    System.out.println("Id курсу: " + Course.Id);
+                }
+
+                System.out.println("Id лекції: " + Course.Id);
 
 
-            sc.close();
-            sc2.close();
+                Lecture anotherLecture = new Lecture(Lecture.ID, nameNewLecture, teacherNewName, Course.Id);
+
+
+                System.out.printf("Назва лекції: " + nameNewLecture +
+                        "\n" + " Ім'я викладача: " + teacherNewName +
+                        "\n" + " Id лекції: " + Lecture.ID +
+                        "\n" + " Id курсу: " + Course.Id);
+
+                System.out.println("\n" + "Lection id:" + anotherLecture.getCourseId());
+
+            } else if (answer == 2) {
+                System.out.println("Ще одну лекцію не буде створено!");
+
+
+                sc.close();
+                sc2.close();
+                sc3.close();
+
+
+            }
         }
-    }}}
+        System.out.println("Загальна кількість створених лекцій - " + Lecture.counter + " лекцій.");
+
+    }
+}
+
 
 
 

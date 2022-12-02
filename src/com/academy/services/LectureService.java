@@ -1,6 +1,5 @@
 package com.academy.services;
 
-import com.academy.models.Course;
 import com.academy.models.Lecture;
 
 public class LectureService {
