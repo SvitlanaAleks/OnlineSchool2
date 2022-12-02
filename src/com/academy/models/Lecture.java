@@ -1,14 +1,20 @@
 package com.academy.models;
 
 public class Lecture {
-    private int ID;
+    public static int ID;
     public static long counter;
-    private int courseId;
-    public String nameLecture;
 
-    public Lecture(int ID, String nameLecture, int courseId) {
+    public static int courseId;
+    private String nameLecture;
+
+    private String teacherName;
+
+
+
+    public Lecture(int ID, String nameLecture, String teacherName, int courseId) {
         this.ID = ID;
         this.nameLecture = nameLecture;
+        this.teacherName=teacherName;
         this.courseId = courseId;
         counter++;
     }

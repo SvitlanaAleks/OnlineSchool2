@@ -1,14 +1,15 @@
 package com.academy.models;
 
 public class Course {
-    public  int courseId;
+    public static int Id;
     public static long counter;
-    public String courseName;
-    public String teacher;
+
+    private String courseName;
+    private String teacher;
     private String lecture;
 
-    public Course(int courseId, String courseName, String teacher, String lecture) {
-        this.courseId = courseId;
+    public Course(int Id, String courseName, String teacher, String lecture) {
+        this.Id = Id;
         this.courseName = courseName;
         this.teacher=teacher;
         this.lecture=lecture;
@@ -16,7 +17,7 @@ public class Course {
         counter++;
     }
 
-    public int getID() {return courseId;
+    public int getID() {return Id;
     }
 
 
