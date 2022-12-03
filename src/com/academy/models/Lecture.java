@@ -4,7 +4,7 @@ public class Lecture {
     public static int ID;
     public static long counter;
 
-    public static int courseId;
+    public static  int courseId;
     private String nameLecture;
 
     private String teacherName;
