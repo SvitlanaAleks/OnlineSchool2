@@ -11,17 +11,16 @@ public class Main {
     public static void main(String[] args) {
         while (true) {
 
-
-            Course course1 = new Course ("JavaDeveloper", "Anna May", "Знайомство з Java");
-            Course course2 = new Course ("Python", "Nick Jagger", " Знайомство з Python");
-
+            Course course1 = new Course (1, "JavaDeveloper", "Anna May", "Знайомство з Java");
+            Course course2 = new Course (8, "Python", "Nick Jagger", " Знайомство з Python");
 
 
 
-            LectureService lectureService = new LectureService();
+
+            // LectureService lectureService = new LectureService();
 
 
-          //  Lecture lecture1 = LectureService.createLecture(1, "Знайомство з Java", "Nikita", course1.getID());
+ //           Lecture lecture1 = lectureService.createLecture(1, "Знайомство з Java", "Nikita", course1.getID());
 //            Lecture lecture2 = lectureService.createLecture(2, "Змінні та операції над ними", "Nikita", course2.getID());
 //            Lecture lecture3 = lectureService.createLecture(3, "Типи даних та модифікатори доступу", "Nikita", course1.getID());
 //            Lecture lecture4 = lectureService.createLecture(4, "Git - структура", "Nikita", course1.getID());
@@ -86,31 +85,31 @@ public class Main {
                         System.out.println("Введіть id курсу:" +
                                 "\n" + "1 " + course1.courseName +
                                 "\n" + "2 " + course2.courseName);
-                        Course.ID = sc2.nextInt();
-                        if (Course.ID == 1) {
-                            System.out.println("Id курсу: " + course1.getID());
-                        }else if (Course.ID== 2) {
-                            System.out.println("Id курсу: " + course2.getID());
+                        Lecture.courseId = sc2.nextInt();
+                        if (Lecture.courseId == 1) {
+                            System.out.println("Id курсу: " + course2.Id);
+                        }else if (Lecture.courseId == 1) {
+                            System.out.println("Id курсу: " + course1.Id);
                         }
 
-                        Lecture lecture = new Lecture (nameLecture, teacherName, Course.ID);
-                        
+                        Lecture lecture = new Lecture(Lecture.ID, nameLecture, teacherName, Lecture.courseId);
+
+                        Lecture.ID++;
+
+
                         System.out.printf("Назва лекції: " + nameLecture +
                                 "\n" + " Ім'я викладача: " + teacherName +
                                 "\n" + " Id лекції: " + Lecture.ID +
-                                "\n" + " Id курсу: " + Course.ID);
+                                "\n" + " Id курсу: " + Lecture.courseId);
 
-                        System.out.println("\n" + "Course id:" + Course.ID);
-                        System.out.println("\n" + "Course id:" + Course.ID);
-                        System.out.println("\n" + "Course id:" + Course.ID);System.out.println("\n" + "Course id:" + Course.ID);
-                        System.out.println("\n" + "Course id:" + Course.ID);
+                        System.out.println("\n" + "Course id:" + Lecture.ID);
 
 
                         System.out.println("Загальна кількість створених лекцій - " + Lecture.counter + " лекцій.");
                         if (Lecture.counter > 7) {
                             System.exit(0);
 
-                            System.out.println("\n" + "Course id:" + Course.ID);
+
                         }
                     } else if (answer == 2) {
                         System.out.println("Ще одну лекцію не буде створено!");
