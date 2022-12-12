@@ -7,8 +7,8 @@ public class LectureService {
     public static long counter;
     public int courseId;
 
-    public Lecture createLecture(int ID, String nameLecture, String teacherName, int courseId) {
-        return new Lecture(ID, nameLecture, teacherName, courseId);
+    public Lecture createLecture( String nameLecture, String teacherName, int courseId) {
+        return new Lecture (nameLecture, teacherName, courseId);
     }
 
 }
