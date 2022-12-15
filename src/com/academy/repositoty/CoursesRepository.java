@@ -12,7 +12,7 @@ public class CoursesRepository {
 
     public CoursesRepository(int inputCapacity) {
         if (inputCapacity < 1) {
-            System.out.println("Wrong argument, creating standart capacity array");
+            System.out.println("Wrong argument, creating standard capacity array");
             this.courseArray = new Course[INIT_CAPACITY];
         } else {
             this.courseArray = new Course[inputCapacity];

@@ -11,6 +11,8 @@ public class Lecture {
 
 
 
+
+
     public Lecture(String nameLecture, String teacherName, int courseId) {
         this.nameLecture = nameLecture;
         this.teacherName = teacherName;
@@ -22,9 +24,11 @@ public class Lecture {
         return ID;}
 
     public int getCourseId() {
-        return this.courseId;
+        return this.courseId;}
 
-}}
+
+        }
+
 
 
 

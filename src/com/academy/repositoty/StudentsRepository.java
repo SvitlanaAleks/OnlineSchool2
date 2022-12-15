@@ -11,7 +11,7 @@ public class StudentsRepository {private final int INIT_CAPACITY = 5;
 
     public StudentsRepository(int inputCapacity) {
         if (inputCapacity < 1) {
-            System.out.println("Wrong argument, creating standart capacity array");
+            System.out.println("Wrong argument, creating standard capacity array");
             this.studentsArray = new Student[INIT_CAPACITY];
         } else {
             this.studentsArray = new Student[inputCapacity];

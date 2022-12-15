@@ -2,25 +2,33 @@ package com.academy;
 
 import com.academy.models.Course;
 import com.academy.models.Lecture;
+import com.academy.repositoty.CoursesRepository;
+import com.academy.repositoty.LecturesRepository;
 import com.academy.services.LectureService;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
+import static com.academy.models.Lecture.ID;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        LecturesRepository lecturesRepository = new LecturesRepository();
+        initData(lecturesRepository);
+
+
         while (true) {
 
-            Course course1 = new Course ( "JavaDeveloper", "Anna May", "Знайомство з Java");
-            Course course2 = new Course ( "Python", "Nick Jagger", " Знайомство з Python");
+            Course course1 = new Course("JavaDeveloper", "Anna May", "Знайомство з Java");
+            Course course2 = new Course("Python", "Nick Jagger", " Знайомство з Python");
 
 
+            LectureService lectureService = new LectureService();
 
 
-             LectureService lectureService = new LectureService();
-
-
- //           Lecture lecture1 = lectureService.createLecture(1, "Знайомство з Java", "Nikita", course1.getID());
+//            Lecture lecture1 = lectureService.createLecture("Знайомство з Java", "Nikita", course1.getID());
 //            Lecture lecture2 = lectureService.createLecture(2, "Змінні та операції над ними", "Nikita", course2.getID());
 //            Lecture lecture3 = lectureService.createLecture(3, "Типи даних та модифікатори доступу", "Nikita", course1.getID());
 //            Lecture lecture4 = lectureService.createLecture(4, "Git - структура", "Nikita", course1.getID());
@@ -86,21 +94,19 @@ public class Main {
                                 "\n" + "1 " + course1.courseName +
                                 "\n" + "2 " + course2.courseName);
                         Course.ID = sc2.nextInt();
-                        if (Course.ID == 1) {
+                        if (Course.getID() == 1) {
                             System.out.println("Id курсу: " + course1.getID());
-                        }else if (Course.ID== 2) {
+                        } else if (Course.getID() == 2) {
                             System.out.println("Id курсу: " + course2.getID());
-                                                }
+                        }
 
-                        Lecture lecture = new Lecture (nameLecture, teacherName, Course.ID);
-
-
+                        Lecture lecture = new Lecture(nameLecture, teacherName, Course.getID());
 
 
                         System.out.printf("Назва лекції: " + nameLecture +
                                 "\n" + " Ім'я викладача: " + teacherName +
                                 "\n" + " Id лекції: " + Lecture.ID +
-                                "\n" + " Id курсу: " + Course.ID);
+                                "\n" + " Id курсу: " + Course.getID());
 
                         System.out.println("\n" + " ID Лекції" + Lecture.ID);
 
@@ -118,16 +124,37 @@ public class Main {
                         break;
 
                     }
-
-
                 }
             }
+        }
+    }
+
+
+    public static void initData(LecturesRepository а) {
+        Course course = new Course("QA", "Nikita", "Знайомство з QA");
+
+        Lecture lecture = new Lecture("Знайомство з Java", "Nikita", Course.getID());
+        Lecture lecture2 = new Lecture("Змінні та операції над ними", "Nikita", Course.getID());
+        Lecture lecture3 = new Lecture("Типи даних та модифікатори доступу", "Nikita", Course.getID());
+
+    }
+
+    public static void showArray(Lecture[] a) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i] + "" + Lecture.ID);
+            System.out.println(Arrays.toString(a));
         }
 
 
     }
-
 }
+
+
+
+
+
+
+
 
 
 

@@ -11,7 +11,7 @@ public class HomeWorksRepository {private final int INIT_CAPACITY = 5;
 
     public HomeWorksRepository(int inputCapacity) {
         if (inputCapacity < 1) {
-            System.out.println("Wrong argument, creating standart capacity array");
+            System.out.println("Wrong argument, creating standard capacity array");
             this.homeWOrkArray = new HomeWork[INIT_CAPACITY];
         } else {
             this.homeWOrkArray = new HomeWork[inputCapacity];
