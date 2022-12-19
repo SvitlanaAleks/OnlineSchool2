@@ -9,7 +9,7 @@ import com.academy.services.LectureService;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static com.academy.models.Lecture.ID;
+
 
 public class Main {
 
@@ -27,15 +27,6 @@ public class Main {
 
             LectureService lectureService = new LectureService();
 
-
-//            Lecture lecture1 = lectureService.createLecture("Знайомство з Java", "Nikita", course1.getID());
-//            Lecture lecture2 = lectureService.createLecture(2, "Змінні та операції над ними", "Nikita", course2.getID());
-//            Lecture lecture3 = lectureService.createLecture(3, "Типи даних та модифікатори доступу", "Nikita", course1.getID());
-//            Lecture lecture4 = lectureService.createLecture(4, "Git - структура", "Nikita", course1.getID());
-//            Lecture lecture5 = lectureService.createLecture(5, "Git - планування релізів", "Nikita", course1.getID());
-//            Lecture lecture6 = lectureService.createLecture(6, "Методи", "Nikita", course1.getID());
-//            System.out.println(lecture6.getCourseId());
-//            System.out.println(Lecture.counter);
 
             Scanner sc = new Scanner(System.in);
 
@@ -93,10 +84,10 @@ public class Main {
                         System.out.println("Введіть id курсу:" +
                                 "\n" + "1 " + course1.courseName +
                                 "\n" + "2 " + course2.courseName);
-                        Course.ID = sc2.nextInt();
-                        if (Course.getID() == 1) {
+                        int numberOfCourse = sc2.nextInt();
+                        if (numberOfCourse == 1) {
                             System.out.println("Id курсу: " + course1.getID());
-                        } else if (Course.getID() == 2) {
+                        } else if (numberOfCourse == 2) {
                             System.out.println("Id курсу: " + course2.getID());
                         }
 
@@ -105,14 +96,14 @@ public class Main {
 
                         System.out.printf("Назва лекції: " + nameLecture +
                                 "\n" + " Ім'я викладача: " + teacherName +
-                                "\n" + " Id лекції: " + Lecture.ID +
+                                "\n" + " Id лекції: " + Lecture.getLectureID() +
                                 "\n" + " Id курсу: " + Course.getID());
 
-                        System.out.println("\n" + " ID Лекції" + Lecture.ID);
+                        System.out.println("\n" + " ID Лекції" + Lecture.getLectureID());
 
 
-                        System.out.println("Загальна кількість створених лекцій - " + Lecture.counter + " лекцій.");
-                        if (Lecture.counter > 7) {
+                        System.out.println("Загальна кількість створених лекцій - " + Lecture.getCounter() + " лекцій.");
+                        if (Lecture.getCounter() > 7) {
                             System.exit(0);
 
 
@@ -120,7 +111,7 @@ public class Main {
                     } else if (answer == 2) {
                         System.out.println("Ще одну лекцію не буде створено!");
 
-                        System.out.println("Загальна кількість створених лекцій - " + Lecture.counter + " лекцій.");
+                        System.out.println("Загальна кількість створених лекцій - " + Lecture.getCounter() + " лекцій.");
                         break;
 
                     }
@@ -141,7 +132,7 @@ public class Main {
 
     public static void showArray(Lecture[] a) {
         for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i] + "" + Lecture.ID);
+            System.out.println(a[i] + "" + Lecture.getLectureID());
             System.out.println(Arrays.toString(a));
         }
 
