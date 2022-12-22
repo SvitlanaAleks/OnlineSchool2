@@ -9,11 +9,13 @@ public class LecturesRepository extends SuperRepository {
 
 
     public LecturesRepository() {
+        super(1);
         this.lectureArray = new Lecture[getINIT_CAPACITY()];
     }
 
 
     public LecturesRepository(int inputCapacity) {
+        super(1);
         if (inputCapacity < 1) {
             System.out.println("Wrong argument, creating standard capacity array");
             this.lectureArray = new Lecture[getINIT_CAPACITY()];
@@ -40,6 +42,25 @@ public class LecturesRepository extends SuperRepository {
     public Lecture[] getLectureArray() {
         return lectureArray;
     }
+
+    @Override
+    public void add(Lecture object) {
+        lectureArray[0] = object;
+    }
+    @Override
+    SuperRepository[] getAll(SuperRepository[] myArray) {
+        return super.getAll(myArray);
+    }
+    @Override
+    public void getByld() {
+        super.getByld();
+    }
+
+    @Override
+    public void deleteByld() {
+        super.deleteByld();
+    }
+
 }
 
 

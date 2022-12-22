@@ -8,11 +8,13 @@ public class AdditionalmaterialsRepository extends SuperRepository {
     private Additionalmaterial[] addMaterialsArray;
 
     public AdditionalmaterialsRepository() {
+        super(1);
 
         this.addMaterialsArray=new Additionalmaterial[getINIT_CAPACITY()];
     }
 
     public AdditionalmaterialsRepository(int inputCapacity) {
+        super(1);
         if (inputCapacity < 1) {
             System.out.println("Wrong argument, creating standart capacity array");
             this.addMaterialsArray= new Additionalmaterial[getINIT_CAPACITY()];
