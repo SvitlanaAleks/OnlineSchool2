@@ -9,6 +9,8 @@ import com.academy.services.LectureService;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static com.academy.repositoty.LecturesRepository.lectureArray;
+import static com.academy.repositoty.LecturesRepository.newLectureArray;
 
 
 public class Main {
@@ -16,10 +18,17 @@ public class Main {
     public static void main(String[] args) {
 
         LecturesRepository lecturesRepository = new LecturesRepository();
-        initData(lecturesRepository);
+        LecturesRepository.addLecture(new Lecture("Знайомство з Java", "Nikita", Course.getID()));
+        LecturesRepository.addLecture(new Lecture("Знайомство з QA", "Nikita", Course.getID()));
+        LecturesRepository.addLecture(new Lecture("Знайомство з Java", "Nikita", Course.getID()));
+        LecturesRepository.addLecture(new Lecture("Знайомство з QA", "Nikita", Course.getID()));
+
+
+        //initData(lecturesRepository);
 
 
         while (true) {
+
 
             Course course1 = new Course("JavaDeveloper", "Anna May", "Знайомство з Java");
             Course course2 = new Course("Python", "Nick Jagger", " Знайомство з Python");
@@ -92,6 +101,11 @@ public class Main {
                         }
 
                         Lecture lecture = new Lecture(nameLecture, teacherName, Course.getID());
+                        LecturesRepository.addLecture(lecture);
+                        System.out.println(lecture);
+                        System.out.println(Arrays.toString(lectureArray));
+                        System.out.println(LecturesRepository.newCapacity);
+                        System.out.println(newLectureArray.length);
 
 
                         System.out.printf("Назва лекції: " + nameLecture +
@@ -99,15 +113,20 @@ public class Main {
                                 "\n" + " Id лекції: " + Lecture.getLectureID() +
                                 "\n" + " Id курсу: " + Course.getID());
 
-                        System.out.println("\n" + " ID Лекції" + Lecture.getLectureID());
 
-
-                        System.out.println("Загальна кількість створених лекцій - " + Lecture.getCounter() + " лекцій.");
-                        if (Lecture.getCounter() > 7) {
-                            System.exit(0);
-
+                        System.out.println("\n" + "Загальна кількість створених лекцій - " + Lecture.getCounter() + " лекцій.");
+//
+//                        if (Lecture.getCounter() > 7) {
+//                            System.exit(0);
+//                                                }
+                        if (Lecture.getCounter() == lectureArray.length) {
+                            System.out.println("full of 5");
+                            LecturesRepository.increaseCapacity();
+                            break;
 
                         }
+
+
                     } else if (answer == 2) {
                         System.out.println("Ще одну лекцію не буде створено!");
 
@@ -119,26 +138,27 @@ public class Main {
             }
         }
     }
-
-
-    public static void initData(LecturesRepository а) {
-        Course course = new Course("QA", "Nikita", "Знайомство з QA");
-
-        Lecture lecture = new Lecture("Знайомство з Java", "Nikita", Course.getID());
-        Lecture lecture2 = new Lecture("Змінні та операції над ними", "Nikita", Course.getID());
-        Lecture lecture3 = new Lecture("Типи даних та модифікатори доступу", "Nikita", Course.getID());
-
-    }
-
-    public static void showArray(Lecture[] a) {
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i] + "" + Lecture.getLectureID());
-            System.out.println(Arrays.toString(a));
-        }
-
-
-    }
 }
+
+
+//    public static void initData(LecturesRepository а) {
+//        Course course = new Course("QA", "Nikita", "Знайомство з QA");
+//
+//        Lecture lecture = new Lecture("Знайомство з Java", "Nikita", Course.getID());
+//        Lecture lecture2 = new Lecture("Змінні та операції над ними", "Nikita", Course.getID());
+//        Lecture lecture3 = new Lecture("Типи даних та модифікатори доступу", "Nikita", Course.getID());
+//
+//    }
+//
+//    public static void showArray(Lecture[] a) {
+//        for (int i = 0; i < a.length; i++) {
+//            System.out.println(a[i] + "" + Lecture.getLectureID());
+//            System.out.println(Arrays.toString(a));
+//        }
+
+
+
+
 
 
 
