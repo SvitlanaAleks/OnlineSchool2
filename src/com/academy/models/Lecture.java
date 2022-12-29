@@ -1,7 +1,7 @@
 package com.academy.models;
 
 public class Lecture extends SuperModels {
-    private static int ID;
+    private int ID;
     private static long counter;
 
     private static int courseId;
@@ -11,21 +11,19 @@ public class Lecture extends SuperModels {
     private String teacherName;
 
 
-    public Lecture(String nameLecture, String teacherName, int courseId) {
+    public Lecture(int ID, String nameLecture, String teacherName, int courseId) {
+        this.ID = ID;
         this.setNameLecture(nameLecture);
         this.setTeacherName(teacherName);
         this.setCourseId(courseId);
-        ID++;
+
         counter++;
     }
 
-    public static int getLectureID() {
+    public int getLectureID() {
         return ID;
     }
 
-    public static void setLectureId(int Id) {
-        Lecture.ID = ID;
-    }
 
     public int getCourseId() {
         return this.courseId;
@@ -45,7 +43,8 @@ public class Lecture extends SuperModels {
     }
 
     public String getTeacherName() {
-        return teacherName;}
+        return teacherName;
+    }
 
     public void setNameLecture(String nameLecture) {
         this.nameLecture = nameLecture;
@@ -54,7 +53,15 @@ public class Lecture extends SuperModels {
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
     }
+
+    @Override
+    public String toString() {
+        return "Lecture {" +
+                "idLecture=" + getLectureID() + "course id" + getCourseId();
+    }
+
 }
+
 
 
 

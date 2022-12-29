@@ -1,7 +1,8 @@
 package com.academy.repositoty;
 
-import com.academy.models.Course;
 import com.academy.models.Lecture;
+
+import java.util.Arrays;
 
 public class LecturesRepository extends SuperRepository {
     public static final int INIT_CAPACITY = 5;
@@ -35,6 +36,7 @@ public class LecturesRepository extends SuperRepository {
         lectureArray = newLectureArray;
     }
 }
+
 //
 //
 //    }
