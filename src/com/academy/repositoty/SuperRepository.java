@@ -4,20 +4,25 @@ import com.academy.models.Lecture;
 
 public class SuperRepository {
 
+
     private Lecture[] myArray;
+
     SuperRepository[] getAll(SuperRepository[] myArray) {
-        return myArray;}
+        return myArray;
+    }
 
     public void add(Lecture object) {
         getMyArray()[0] = object;
     }
 
     public void getByld() {
-        System.out.println(getMyArray()[0]);}
+        System.out.println(getMyArray()[0]);
+    }
 
     public void deleteByld() {
         getMyArray()[0] = null;
     }
+
     private int id;
 
     private int counter;
@@ -48,5 +53,5 @@ public class SuperRepository {
 
     public void setMyArray(Lecture[] myArray) {
         this.myArray = myArray;
-    }
-}
+
+        }}

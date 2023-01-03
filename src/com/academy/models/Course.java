@@ -6,15 +6,15 @@ public class Course extends SuperModels {
 
     private static long counter;
 
-    public String courseName;
+    private String courseName;
     private String teacher;
     private String lecture;
 
     public Course(String courseName, String teacher, String lecture) {
 
-        this.courseName = courseName;
-        this.teacher = teacher;
-        this.lecture = lecture;
+        this.setCourseName(courseName);
+        this.setTeacher(teacher);
+        this.setLecture(lecture);
         ID++;
         counter++;
     }

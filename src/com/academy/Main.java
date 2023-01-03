@@ -2,15 +2,13 @@ package com.academy;
 
 import com.academy.models.Course;
 import com.academy.models.Lecture;
-import com.academy.repositoty.CoursesRepository;
 import com.academy.repositoty.LecturesRepository;
 import com.academy.services.LectureService;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-import static com.academy.repositoty.LecturesRepository.lectureArray;
-import static com.academy.repositoty.LecturesRepository.newLectureArray;
+import static com.academy.repositoty.LecturesRepository.getLectureArray;
+import static com.academy.repositoty.LecturesRepository.getNewLectureArray;
 
 
 public class Main {
@@ -62,8 +60,8 @@ public class Main {
                 System.out.println("Розділ в стані наповнення");
             } else if (numberOfCategory == 1) {
                 System.out.println("Виберіть курс" +
-                        "\n" + "1. " + course1.courseName +
-                        "\n" + "2. " + course2.courseName);
+                        "\n" + "1. " + course1.getCourseName() +
+                        "\n" + "2. " + course2.getCourseName());
                 int numberOfCourse = sc.nextInt();
                 switch (numberOfCourse) {
                     case 1 -> System.out.println("You selected the Course: JavaDeveloper");
@@ -91,8 +89,8 @@ public class Main {
                         System.out.println("Ім'я викладача: " + teacherName);
 
                         System.out.println("Введіть id курсу:" +
-                                "\n" + "1 " + course1.courseName +
-                                "\n" + "2 " + course2.courseName);
+                                "\n" + "1 " + course1.getCourseName() +
+                                "\n" + "2 " + course2.getCourseName());
                         int numberOfCourse = sc2.nextInt();
                         if (numberOfCourse == 1) {
                             System.out.println("Id курсу: " + course1.getID());
@@ -104,7 +102,7 @@ public class Main {
 
                         Lecture lecture = new Lecture(ID, nameLecture, teacherName, Course.getID());
                         LecturesRepository.addLecture(lecture);
-                        LectureService.showIDLecture();
+                       LectureService.showIDLecture();
 
 
 
@@ -117,10 +115,13 @@ public class Main {
 
                         System.out.println("\n" + "Загальна кількість створених лекцій - " + Lecture.getCounter() + " лекцій.");
 
-                        if (Lecture.getCounter() == lectureArray.length) {
-                            System.out.println("full of 5");
+                        if (Lecture.getCounter() == getNewLectureArray().length) {
+                            System.out.println("full of 8");
                             LecturesRepository.increaseCapacity();
+
+
                         }
+
 
                         } else if (answer == 2) {
                             System.out.println("Ще одну лекцію не буде створено!");
@@ -132,6 +133,7 @@ public class Main {
 
 
                     }
+
                 }
             }
         }

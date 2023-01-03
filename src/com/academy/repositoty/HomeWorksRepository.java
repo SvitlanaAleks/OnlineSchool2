@@ -9,7 +9,7 @@ public class HomeWorksRepository extends SuperRepository {
     public HomeWorksRepository() {
         super(1);
 
-        this.setHomeWOrkArray(new HomeWork[INIT_CAPACITY]);
+        this.homeWOrkArray=(new HomeWork[getINIT_CAPACITY()]);
     }
 
     public HomeWorksRepository(int inputCapacity) {

@@ -2,7 +2,7 @@ package com.academy.models;
 
 public class HomeWork extends SuperModels {
     private static long ID;
-    public static long counter;
+    private static long counter;
 
     public HomeWork() {
         ID = counter++;
