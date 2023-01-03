@@ -12,7 +12,8 @@ public class LecturesRepository extends SuperRepository {
 
 
     public LecturesRepository() {
-        super(1);
+        super(1
+        );
         this.lectureArray = new Lecture[getINIT_CAPACITY()];
         this.newLectureArray = new Lecture[newCapacity];
 
@@ -34,8 +35,7 @@ public class LecturesRepository extends SuperRepository {
         Lecture[] newLectureArray = new Lecture[newCapacity];
 
         System.arraycopy(getLectureArray(), 0, newLectureArray, 0, INIT_CAPACITY);
-        //getLectureArray() = getNewLectureArray();
-        lectureArray=newLectureArray;
+              lectureArray=newLectureArray;
     }
 
 

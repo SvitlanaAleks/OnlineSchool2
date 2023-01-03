@@ -4,7 +4,7 @@ import com.academy.models.Lecture;
 
 public class SuperRepository {
 
-
+    private final int INIT_CAPACITY = 5;
     private Lecture[] myArray;
 
     SuperRepository[] getAll(SuperRepository[] myArray) {

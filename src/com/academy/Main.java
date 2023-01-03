@@ -107,6 +107,7 @@ public class Main {
 
 
 
+
                         System.out.printf("Назва лекції: " + nameLecture +
                                 "\n" + " Ім'я викладача: " + teacherName +
                                 "\n" + " Id лекції: " + lecture.getLectureID() +
