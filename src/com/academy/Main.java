@@ -4,6 +4,7 @@ import com.academy.models.Course;
 import com.academy.models.Lecture;
 import com.academy.repositoty.LecturesRepository;
 import com.academy.services.LectureService;
+import com.academy.services.MainService;
 
 import java.util.Scanner;
 
@@ -12,6 +13,9 @@ import static com.academy.repositoty.LecturesRepository.getNewLectureArray;
 
 
 public class Main {
+
+    public static final Scanner SCANNER = new Scanner(System.in);
+
 
     public static void main(String[] args) {
 
@@ -23,9 +27,6 @@ public class Main {
         LecturesRepository.addLecture(new Lecture(4,"Знайомство з QA", "Nikita", Course.getID()));
 
 
-        //initData(lecturesRepository);
-
-
         while (true) {
 
 
@@ -33,21 +34,25 @@ public class Main {
             Course course2 = new Course("Python", "Nick Jagger", " Знайомство з Python");
 
 
-
-
             Scanner sc = new Scanner(System.in);
 
             int numberOfCategory = 0;
+
+            int category = MainService.choiceCategory();
+
+
             do {
-                System.out.println("Виберіть категорію:");
-                System.out.println("1. Курси");
-                System.out.println("2. Вчителі");
-                System.out.println("3. Студенти");
-                System.out.println("4. Лекції");
+//                System.out.println("Виберіть категорію:");
+//                System.out.println("1. Курси");
+//                System.out.println("2. Вчителі");
+//                System.out.println("3. Студенти");
+//                System.out.println("4. Лекції");
                 numberOfCategory = sc.nextInt();
 
 
             } while (numberOfCategory < 1 || numberOfCategory > 4);
+
+
 
             switch (numberOfCategory) {
                 case 1 -> System.out.println("You selected the category: Courses");
