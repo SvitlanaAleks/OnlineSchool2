@@ -35,7 +35,7 @@ public class Course extends SuperModels {
         Course.counter = counter;
     }
 
-    public String getCourseName() {
+    public  String getCourseName() {
         return courseName;
     }
 
