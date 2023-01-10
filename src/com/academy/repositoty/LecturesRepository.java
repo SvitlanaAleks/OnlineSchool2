@@ -1,6 +1,7 @@
 package com.academy.repositoty;
 
 import com.academy.models.Lecture;
+import com.academy.models.SuperModels;
 
 import java.util.Arrays;
 
@@ -12,7 +13,7 @@ public class LecturesRepository extends SuperRepository {
 
 
     public LecturesRepository() {
-        super(1);
+
         this.lectureArray = new Lecture[getINIT_CAPACITY()];
         this.newLectureArray = new Lecture[newCapacity];
 
@@ -57,20 +58,30 @@ public class LecturesRepository extends SuperRepository {
         return newLectureArray;
     }
 
+//    @Override
+//    public void add(Lecture object) {
+//        lectureArray[0] = object;
+//    }
+@Override
+public Lecture[] getALL() {
+    return lectureArray;
+}
+
     @Override
-    public void add(Lecture object) {
-        lectureArray[0] = object;
-    }
-    @Override
-    SuperRepository[] getAll(SuperRepository[] myArray) {
-        return super.getAll(myArray);
-    }
-    @Override
-    public void getByld() {
-        super.getByld();
+    public void getByID(int ID) {
+        for (SuperModels openLecture : lectureArray) {
+            if (openLecture != null) {
+                if (ID==openLecture.getId()) {
+                    System.out.println(openLecture);
+                }
+            }
+        }
     }
 
     @Override
-    public void deleteByld() {
-        super.deleteByld();
-    }}
+    public void deleteByID(int ID) {
+        for (int i = 0; i < lectureArray.length; i++) {
+            if (lectureArray[i] != null) {
+                if (ID == lectureArray[i].getLectureID()) {
+                    lectureArray[i] = null;
+                }}}}}

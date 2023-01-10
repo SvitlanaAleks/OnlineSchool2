@@ -7,12 +7,12 @@ public class StudentsRepository extends SuperRepository {
     private Student[] studentsArray;
 
     public StudentsRepository() {
-        super(1);
+
         this.studentsArray = new Student[getINIT_CAPACITY()];
     }
 
     public StudentsRepository(int inputCapacity) {
-        super(1);
+
         if (inputCapacity < 1) {
             System.out.println("Wrong argument, creating standard capacity array");
             this.studentsArray = new Student[getINIT_CAPACITY()];

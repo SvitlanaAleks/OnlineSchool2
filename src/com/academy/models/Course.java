@@ -23,9 +23,9 @@ public class Course extends SuperModels {
         return ID;
     }
 
-    public static void setID(int ID) {
-        Course.ID = ID;
-    }
+    //public static void setID(int ID) {
+//        Course.ID = ID;
+//    }
 
     public static long getCounter() {
         return counter;

@@ -7,13 +7,13 @@ public class HomeWorksRepository extends SuperRepository {
     private HomeWork[] homeWOrkArray;
 
     public HomeWorksRepository() {
-        super(1);
+
 
         this.homeWOrkArray=(new HomeWork[getINIT_CAPACITY()]);
     }
 
     public HomeWorksRepository(int inputCapacity) {
-        super(1);
+
         if (inputCapacity < 1) {
             System.out.println("Wrong argument, creating standard capacity array");
             this.setHomeWOrkArray(new HomeWork[INIT_CAPACITY]);

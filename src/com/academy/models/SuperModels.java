@@ -1,11 +1,11 @@
 package com.academy.models;
 
 public class SuperModels {
-    private static int id;
+    private  int id;
 
-    public static int getId() {
+    public  int getId() {
         return id;
     }
-    public static void setId(int id) {
-        SuperModels.id = id;
-}}
+    public void setID(int ID) {
+        this.id = id;
+    }}

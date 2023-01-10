@@ -1,57 +1,43 @@
 package com.academy.repositoty;
 
 import com.academy.models.Lecture;
+import com.academy.models.SuperModels;
 
 public class SuperRepository {
 
 
-    private Lecture[] myArray;
+    private static SuperModels[] arrayRepository = new SuperModels[10];
 
-    SuperRepository[] getAll(SuperRepository[] myArray) {
-        return myArray;
+    public SuperModels[] getALL () {
+        return arrayRepository;
     }
 
-    public void add(Lecture object) {
-        getMyArray()[0] = object;
+    public void add (SuperModels fillIN) {
+        for (int i = 0; i < arrayRepository.length; i++) {
+            if (arrayRepository[i] != null) {
+                continue;
+            }
+            arrayRepository[i] = fillIN;
+            break;
+        }
     }
 
-    public void getByld() {
-        System.out.println(getMyArray()[0]);
-    }
+    public void getByID (int ID) {
+        for (SuperModels openLecture : arrayRepository) {
+            if (openLecture != null) {
+                if (ID==openLecture.getId()) {
+                    System.out.println(openLecture);
+                }
+            }
+        }
+    }//написать override
 
-    public void deleteByld() {
-        getMyArray()[0] = null;
-    }
-
-    private int id;
-
-    private int counter;
-
-    public SuperRepository(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getCounter() {
-        return counter;
-    }
-
-    public void setCounter(int counter) {
-        this.counter = counter;
-    }
-
-    public Lecture[] getMyArray() {
-        return myArray;
-    }
-
-    public void setMyArray(Lecture[] myArray) {
-        this.myArray = myArray;
-
-        }}
+    public void deleteByID (int ID) {
+        for (int i = 0; i < arrayRepository.length; i++) {
+            if (arrayRepository[i] != null) {
+                if (ID == arrayRepository[i].getId()) {
+                    arrayRepository[i] = null;
+                }
+            }
+        }
+    }}

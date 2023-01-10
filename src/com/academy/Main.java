@@ -33,12 +33,12 @@ public class Main {
                    switch (numberOfCategory) {
                 case 1 -> {
                     System.out.println("You selected the category: Courses");
-
                 }
 
                 case 2 -> System.out.println("You selected the category: Teachers");
                 case 3 -> System.out.println("You selected the category: Students");
                 case 4 -> {System.out.println("You selected the category: Lectures. Виберіть дію");
+               //int numberOfAction=MainService.choiceAction();
                     MainService.workWithLecture();}
                 default -> System.out.println("Such category does not exist!");}}}
 //            }

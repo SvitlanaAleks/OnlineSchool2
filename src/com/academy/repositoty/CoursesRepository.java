@@ -7,13 +7,13 @@ public class CoursesRepository extends SuperRepository{
     private Course[] courseArray;
 
     public CoursesRepository() {
-        super(1);
+
 
         this.setCourseArray (new Course[getINIT_CAPACITY()]);
     }
 
     public CoursesRepository(int inputCapacity) {
-        super(1);
+
         if (inputCapacity < 1) {
             System.out.println("Wrong argument, creating standard capacity array");
             this.setCourseArray( new Course[getINIT_CAPACITY()]);
