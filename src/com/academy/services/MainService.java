@@ -5,6 +5,8 @@ import com.academy.models.Lecture;
 import com.academy.repositoty.LecturesRepository;
 
 import static com.academy.Main.sc;
+import static com.academy.repositoty.LecturesRepository.getLectureArray;
+import static com.academy.repositoty.LecturesRepository.getNewLectureArray;
 
 public class MainService {
 
@@ -43,14 +45,15 @@ public class MainService {
 
         switch (choiceAction()) {
             case 1:
-                System.out.println("Введіть тему лекції: ");
+
+                    System.out.println("Введіть тему лекції: ");
                 String nameLecture = sc.next();
-                System.out.println("Тема лекції: " + nameLecture);
+                //System.out.println("Тема лекції: " + nameLecture);
 
                 System.out.println("Введіть викладача: ");
                 String teacherName = sc.next();
 
-                System.out.println("Ім'я викладача: " + teacherName);
+                //System.out.println("Ім'я викладача: " + teacherName);
 
 
                 System.out.println("Введіть ID лекції");
@@ -58,7 +61,9 @@ public class MainService {
 
                 Lecture lecture = new Lecture(ID, nameLecture, teacherName, Course.getID());
                 LecturesRepository.addLecture(lecture);
-                LectureService.showIDLecture();
+                //LectureService.showIDLecture();
+                LectureService.showLecture();
+
 
 
                 System.out.printf("Назва лекції: " + nameLecture +
@@ -67,10 +72,19 @@ public class MainService {
 
 
                 System.out.println("\n" + "Загальна кількість створених лекцій - " + Lecture.getCounter() + " лекцій.");
+                System.out.println(Lecture.getCounter());
 
-//                if (Lecture.getCounter() == 5) {
-//                    System.out.println("full of 8");
-//                    LecturesRepository.increaseCapacity();
+                if (getLectureArray().length==5) {
+                    System.out.println("full of 5");
+                    LecturesRepository.increaseCapacity();}
+
+                    System.out.println("Массив содержит " + getLectureArray().length);
+
+                }
+
+                MainService.workWithLecture();
+
+
 //
 //                }
 //
@@ -81,4 +95,4 @@ public class MainService {
 
 
     }
-}
+

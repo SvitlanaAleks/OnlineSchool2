@@ -20,7 +20,10 @@ public class LectureService {
 
         }
     }
-}
+    public static void showLecture() {
+        for (Lecture elements: getLectureArray()){
+            System.out.println(elements);
+}}}
 
 
 

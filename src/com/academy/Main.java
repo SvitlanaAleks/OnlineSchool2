@@ -8,9 +8,6 @@ import com.academy.services.MainService;
 
 import java.util.Scanner;
 
-import static com.academy.repositoty.LecturesRepository.getLectureArray;
-import static com.academy.repositoty.LecturesRepository.getNewLectureArray;
-
 
 public class Main {
     public static final Scanner sc = new Scanner(System.in);
