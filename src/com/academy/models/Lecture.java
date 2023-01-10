@@ -23,6 +23,7 @@ public class Lecture extends SuperModels {
         counter++;
     }
 
+
     public  int getLectureID() {
         return ID;
     }

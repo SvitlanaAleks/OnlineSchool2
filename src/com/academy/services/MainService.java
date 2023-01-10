@@ -101,7 +101,6 @@ public class MainService {
                     MainService.workWithLecture();
                 } else {
                     MainService.workWithCategory();
-
                 }
             case 2:
                 System.out.println("open lecture number");
@@ -126,15 +125,8 @@ public class MainService {
             default:
                 System.out.println("Error");
                 break;
-        }
+        }}}
 
-//
-//                 else if  (Lecture.getCounter()==8) {
-//            MainService.switchCategory();}
-
-
-    }
-}
 
 
 

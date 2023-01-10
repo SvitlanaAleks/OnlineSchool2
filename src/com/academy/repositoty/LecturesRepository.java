@@ -58,10 +58,7 @@ public class LecturesRepository extends SuperRepository {
         return newLectureArray;
     }
 
-//    @Override
-//    public void add(Lecture object) {
-//        lectureArray[0] = object;
-//    }
+
 @Override
 public Lecture[] getALL() {
     return lectureArray;
