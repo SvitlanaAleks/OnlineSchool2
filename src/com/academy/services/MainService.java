@@ -5,8 +5,7 @@ import com.academy.models.Lecture;
 import com.academy.repositoty.LecturesRepository;
 
 import static com.academy.Main.sc;
-import static com.academy.repositoty.LecturesRepository.getLectureArray;
-import static com.academy.repositoty.LecturesRepository.getNewLectureArray;
+import static com.academy.repositoty.LecturesRepository.*;
 
 public class MainService {
 
@@ -21,6 +20,20 @@ public class MainService {
         System.out.println("4. Лекції");
 
         return getNumberOfCategory();
+
+    }
+    public static void workWithCategory () {
+        switch (numberOfCategory) {
+            case 1 -> {
+                System.out.println("You selected the category: Courses");
+            }
+
+            case 2 -> System.out.println("You selected the category: Teachers");
+            case 3 -> System.out.println("You selected the category: Students");
+            case 4 -> {System.out.println("You selected the category: Lectures. Виберіть дію");
+                //int numberOfAction=MainService.choiceAction();
+                MainService.workWithLecture();}
+            default -> System.out.println("Such category does not exist!");}
     }
 
     private static int getNumberOfCategory() {
@@ -74,25 +87,37 @@ public class MainService {
                 System.out.println("\n" + "Загальна кількість створених лекцій - " + Lecture.getCounter() + " лекцій.");
                 System.out.println(Lecture.getCounter());
 
-                if (getLectureArray().length==5) {
-                    System.out.println("full of 5");
-                    LecturesRepository.increaseCapacity();}
+                if (Lecture.getCounter()==getLectureArray().length) {
+                    System.out.println("Full of Massive");
+                    LecturesRepository.increaseCapacity();
 
                     System.out.println("Массив содержит " + getLectureArray().length);
+                }
+                if (Lecture.getCounter() >= 8){
+                    MainService.workWithLecture();
+                }
+                    else {
+                        MainService.workWithCategory();
 
                 }
 
-                MainService.workWithLecture();
-
-
+            }
 //
-//                }
-//
-//
-//                System.out.println("Загальна кількість створених лекцій - " + Lecture.getCounter() + " лекцій.");
-
-        }
+//                 else if  (Lecture.getCounter()==8) {
+//            MainService.switchCategory();}
 
 
-    }
+
+
+
+    }}
+
+
+
+
+
+
+
+
+
 

@@ -25,19 +25,20 @@ public class Main {
             Course course2 = new Course("Python", "Nick Jagger", " Знайомство з Python");
 
 
-            int numberOfCategory = MainService.switchCategory();;
+           MainService.switchCategory();
+           MainService.workWithLecture();}}
 
-                   switch (numberOfCategory) {
-                case 1 -> {
-                    System.out.println("You selected the category: Courses");
-                }
-
-                case 2 -> System.out.println("You selected the category: Teachers");
-                case 3 -> System.out.println("You selected the category: Students");
-                case 4 -> {System.out.println("You selected the category: Lectures. Виберіть дію");
-               //int numberOfAction=MainService.choiceAction();
-                    MainService.workWithLecture();}
-                default -> System.out.println("Such category does not exist!");}}}
+//                   switch (numberOfCategory) {
+//                case 1 -> {
+//                    System.out.println("You selected the category: Courses");
+//                }
+//
+//                case 2 -> System.out.println("You selected the category: Teachers");
+//                case 3 -> System.out.println("You selected the category: Students");
+//                case 4 -> {System.out.println("You selected the category: Lectures. Виберіть дію");
+//               //int numberOfAction=MainService.choiceAction();
+//                    MainService.workWithLecture();}
+//                default -> System.out.println("Such category does not exist!");}}}
 //            }
 //            if (numberOfCategory != 4 && numberOfCategory != 1) {
 //                System.out.println("Розділ в стані наповнення");
