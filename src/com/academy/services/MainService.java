@@ -107,6 +107,11 @@ public class MainService {
             case 3:System.out.println("the list of lectures");
                 LectureService.showLecture();
                 break;
+            case 4: System.out.println("input lecture number");
+                lectureId = sc.nextInt();
+                LectureService.deleteByID(lectureId);
+                LectureService.showLecture();
+                break;
             }
 
 //

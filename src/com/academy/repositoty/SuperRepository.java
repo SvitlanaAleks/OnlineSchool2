@@ -6,7 +6,7 @@ import com.academy.models.SuperModels;
 public class SuperRepository {
 
 
-    private static SuperModels[] arrayRepository = new SuperModels[10];
+    private  SuperModels[] arrayRepository = new SuperModels[10];
 
     public SuperModels[] getALL () {
         return arrayRepository;

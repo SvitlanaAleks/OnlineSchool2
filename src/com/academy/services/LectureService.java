@@ -32,7 +32,16 @@ public class LectureService {
                 if (ID==openLecture.getLectureID()) {
                     System.out.println(openLecture);
 
-}}}}}
+}}}}
+
+    public static void deleteByID(int ID) {
+        for (int i = 0; i < getLectureArray().length; i++) {
+            if (getLectureArray()[i] != null) {
+                if (ID == getLectureArray()[i].getLectureID()) {
+                    getLectureArray()[i] = null;
+                }}}}}
+
+
 
 
 
