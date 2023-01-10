@@ -10,7 +10,7 @@ import static com.academy.repositoty.LecturesRepository.*;
 public class MainService {
 
     static int numberOfCategory;
-     static int  numberOfAction;
+    static int numberOfAction;
 
     public static int switchCategory() {
         System.out.println("Виберіть категорію:");
@@ -22,7 +22,8 @@ public class MainService {
         return getNumberOfCategory();
 
     }
-    public static void workWithCategory () {
+
+    public static void workWithCategory() {
         switch (numberOfCategory) {
             case 1 -> {
                 System.out.println("You selected the category: Courses");
@@ -30,10 +31,13 @@ public class MainService {
 
             case 2 -> System.out.println("You selected the category: Teachers");
             case 3 -> System.out.println("You selected the category: Students");
-            case 4 -> {System.out.println("You selected the category: Lectures. Виберіть дію");
+            case 4 -> {
+                System.out.println("You selected the category: Lectures. Виберіть дію");
                 //int numberOfAction=MainService.choiceAction();
-                MainService.workWithLecture();}
-            default -> System.out.println("Such category does not exist!");}
+                MainService.workWithLecture();
+            }
+            default -> System.out.println("Such category does not exist!");
+        }
     }
 
     private static int getNumberOfCategory() {
@@ -51,7 +55,8 @@ public class MainService {
         System.out.println("4 - delete");
         System.out.println("5 - exit");
         int numberOfAction = sc.nextInt();
-    return numberOfAction;}
+        return numberOfAction;
+    }
 
 
     public static void workWithLecture() {
@@ -59,7 +64,7 @@ public class MainService {
         switch (choiceAction()) {
             case 1:
 
-                    System.out.println("Введіть тему лекції: ");
+                System.out.println("Введіть тему лекції: ");
                 String nameLecture = sc.next();
                 //System.out.println("Тема лекції: " + nameLecture);
 
@@ -78,7 +83,6 @@ public class MainService {
                 LectureService.showLecture();
 
 
-
                 System.out.printf("Назва лекції: " + nameLecture +
                         "\n" + " Ім'я викладача: " + teacherName +
                         "\n" + " Id лекції: " + lecture.getLectureID());
@@ -87,42 +91,50 @@ public class MainService {
                 System.out.println("\n" + "Загальна кількість створених лекцій - " + Lecture.getCounter() + " лекцій.");
                 System.out.println(Lecture.getCounter());
 
-                if (Lecture.getCounter()==getLectureArray().length) {
+                if (Lecture.getCounter() == getLectureArray().length) {
                     System.out.println("Full of Massive");
                     LecturesRepository.increaseCapacity();
 
                     System.out.println("Массив содержит " + getLectureArray().length);
                 }
-                if (Lecture.getCounter() >= 8){
+                if (Lecture.getCounter() >= 8) {
                     MainService.workWithLecture();
-                }
-                    else {
-                        MainService.workWithCategory();
+                } else {
+                    MainService.workWithCategory();
 
-                } case 2: System.out.println("open lecture number");
+                }
+            case 2:
+                System.out.println("open lecture number");
                 int lectureId = sc.nextInt();
-               LectureService.getByID(lectureId);
+                LectureService.getByID(lectureId);
                 break;
 
-            case 3:System.out.println("the list of lectures");
+            case 3:
+                System.out.println("the list of lectures");
                 LectureService.showLecture();
                 break;
-            case 4: System.out.println("input lecture number");
+            case 4:
+                System.out.println("input lecture number");
                 lectureId = sc.nextInt();
                 LectureService.deleteByID(lectureId);
                 LectureService.showLecture();
                 break;
-            }
+
+            case 5:
+                System.out.println("exit");
+            break;
+            default:
+                System.out.println("Error");
+                break;
+        }
 
 //
 //                 else if  (Lecture.getCounter()==8) {
 //            MainService.switchCategory();}
 
 
-
-
-
-    }}
+    }
+}
 
 
 
