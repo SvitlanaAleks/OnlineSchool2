@@ -1,6 +1,7 @@
 package com.academy.services;
 
 import com.academy.models.Lecture;
+import com.academy.models.SuperModels;
 
 import static com.academy.repositoty.LecturesRepository.*;
 
@@ -23,7 +24,15 @@ public class LectureService {
     public static void showLecture() {
         for (Lecture elements: getLectureArray()){
             System.out.println(elements);
-}}}
+}}
+
+    public static void getByID(int ID) {
+        for (Lecture openLecture : getLectureArray()) {
+            if (openLecture != null) {
+                if (ID==openLecture.getLectureID()) {
+                    System.out.println(openLecture);
+
+}}}}}
 
 
 

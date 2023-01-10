@@ -99,9 +99,16 @@ public class MainService {
                     else {
                         MainService.workWithCategory();
 
-                }
+                } case 2: System.out.println("open lecture number");
+                int lectureId = sc.nextInt();
+               LectureService.getByID(lectureId);
+                break;
 
+            case 3:System.out.println("the list of lectures");
+                LectureService.showLecture();
+                break;
             }
+
 //
 //                 else if  (Lecture.getCounter()==8) {
 //            MainService.switchCategory();}
